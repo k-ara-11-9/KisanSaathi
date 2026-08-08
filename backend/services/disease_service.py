@@ -101,7 +101,7 @@ def predict_disease(image_bytes: bytes) -> dict:
         "message": message,
         "top3": top3,
     }
-def analyze_and_save(image_bytes: bytes) -> dict:
+def analyze_and_save(image_bytes: bytes, language: str = "English") -> dict:
     result = predict_disease(image_bytes)
 
     if result["predicted_class"] == "Background_without_leaves":
@@ -118,7 +118,7 @@ def analyze_and_save(image_bytes: bytes) -> dict:
     )
     
     plan = build_plan(req)
-    solution_brief = generate_simple_advice(plan)
+    solution_brief = generate_simple_advice(plan, language=language)
 
     saved = save_history_entry(
         image_bytes=image_bytes,
