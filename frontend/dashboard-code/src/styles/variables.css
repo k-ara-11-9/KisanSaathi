@@ -1,0 +1,33 @@
+:root {
+  /* Palette — pulled from the AgriAI reference */
+  --bg-app: #F3F5F0;
+  --bg-card: #FFFFFF;
+  --bg-card-soft: #F7F8F4;
+  --bg-sidebar: #12261B;
+
+  --accent: #7DBB3F;
+  --accent-dark: #5C9A2C;
+  --accent-soft: #EAF4DD;
+
+  --text-primary: #12261B;
+  --text-secondary: #6B7568;
+  --text-muted: #98A196;
+  --text-on-dark: #F3F5F0;
+
+  --border-soft: #E7EAE3;
+
+  --danger: #E4633F;
+  --warning: #E0A93A;
+  --info: #3E7DC9;
+
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+  --radius-pill: 100px;
+
+  --shadow-card: 0 12px 32px -18px rgba(18, 38, 27, 0.18);
+  --shadow-card-hover: 0 16px 40px -16px rgba(18, 38, 27, 0.24);
+
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Fraunces', 'Georgia', serif;
+}
