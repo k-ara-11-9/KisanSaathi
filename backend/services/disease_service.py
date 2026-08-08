@@ -2,7 +2,7 @@ import tensorflow as tf
 import numpy as np
 import json
 from pathlib import Path
-from PIL import Image
+from PIL import Image, ImageOps
 import io
 from services.recommendation_service import get_recommendation   # NEW
 from services.history_service import save_history_entry           # NEW
@@ -35,7 +35,8 @@ def format_class_name(raw_name: str) -> dict:
 
 
 def preprocess_image(image_bytes: bytes) -> np.ndarray:
-    image = Image.open(io.BytesIO(image_bytes)).convert("RGB")
+    image = Image.open(io.BytesIO(image_bytes))
+    image = ImageOps.exif_transpose(image).convert("RGB")
     image = image.resize((IMG_SIZE, IMG_SIZE))
     image_array = np.array(image, dtype=np.float32)
     image_array = tf.keras.applications.efficientnet.preprocess_input(image_array)
@@ -47,6 +48,9 @@ def sigmoid_to_softmax(sigmoid_probs: np.ndarray) -> np.ndarray:
         logits = np.log(clipped / (1 - clipped))
         exp_logits = np.exp(logits - np.max(logits))
         return exp_logits / exp_logits.sum()
+
+CONFIDENCE_THRESHOLD = 0.50
+
 
 def predict_disease(image_bytes: bytes) -> dict:
     processed = preprocess_image(image_bytes)
@@ -66,6 +70,7 @@ def predict_disease(image_bytes: bytes) -> dict:
             "disease": None,
             "is_healthy": None,
             "confidence": confidence,
+            "is_uncertain": True,
             "message": "No leaf detected in the image. Please upload a clear photo of a plant leaf.",
         }
 
@@ -77,12 +82,21 @@ def predict_disease(image_bytes: bytes) -> dict:
         for i in top3_indices
     ]
 
+    is_uncertain = confidence < CONFIDENCE_THRESHOLD
+    message = (
+        "Low confidence diagnosis. Please provide a closer, well-lit photo of the plant leaf for better accuracy."
+        if is_uncertain
+        else None
+    )
+
     return {
         "predicted_class": predicted_class,
         "crop": formatted["crop"],
         "disease": formatted["disease"],
         "is_healthy": formatted["is_healthy"],
         "confidence": confidence,
+        "is_uncertain": is_uncertain,
+        "message": message,
         "top3": top3,
     }
 def analyze_and_save(image_bytes: bytes) -> dict:

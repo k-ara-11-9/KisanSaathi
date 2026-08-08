@@ -1,0 +1,176 @@
+{
+    "early_blight": {
+        "nitrogen_multiplier": 0.8,
+        "irrigation_override": "avoid_overwatering",
+        "water_multiplier": 0.8,
+        "advice": "Reduce nitrogen by 20% to prevent excessive leafy growth which encourages early blight lesion spread. Avoid overwatering as prolonged leaf wetness promotes disease development."
+    },
+    "late_blight": {
+        "nitrogen_multiplier": 0.7,
+        "irrigation_override": "delay",
+        "water_multiplier": 0.7,
+        "advice": "Reduce nitrogen by 30% and delay irrigation significantly. Late blight thrives in wet, humid conditions; maintaining dry foliage is critical."
+    },
+    "leaf_curl": {
+        "nitrogen_multiplier": 1.2,
+        "irrigation_override": "irrigate",
+        "water_multiplier": 1.1,
+        "advice": "Increase nitrogen by 20% and maintain consistent moisture. Leaf curl virus stresses the plant, requiring slightly higher nutrient support and prevention of drought stress."
+    },
+    "apple___apple_scab": {
+        "nitrogen_multiplier": 0.85,
+        "irrigation_override": "delay",
+        "water_multiplier": 0.85,
+        "advice": "Fungal/Bacterial issue detected. Reduce nitrogen to slow leafy growth and reduce irrigation to lower humidity around the plant."
+    },
+    "apple___black_rot": {
+        "nitrogen_multiplier": 0.85,
+        "irrigation_override": "delay",
+        "water_multiplier": 0.85,
+        "advice": "Fungal/Bacterial issue detected. Reduce nitrogen to slow leafy growth and reduce irrigation to lower humidity around the plant."
+    },
+    "apple___cedar_apple_rust": {
+        "nitrogen_multiplier": 0.85,
+        "irrigation_override": "delay",
+        "water_multiplier": 0.85,
+        "advice": "Fungal/Bacterial issue detected. Reduce nitrogen to slow leafy growth and reduce irrigation to lower humidity around the plant."
+    },
+    "cherry___powdery_mildew": {
+        "nitrogen_multiplier": 0.85,
+        "irrigation_override": "delay",
+        "water_multiplier": 0.85,
+        "advice": "Fungal/Bacterial issue detected. Reduce nitrogen to slow leafy growth and reduce irrigation to lower humidity around the plant."
+    },
+    "corn___cercospora_leaf_spot gray_leaf_spot": {
+        "nitrogen_multiplier": 0.85,
+        "irrigation_override": "delay",
+        "water_multiplier": 0.85,
+        "advice": "Fungal/Bacterial issue detected. Reduce nitrogen to slow leafy growth and reduce irrigation to lower humidity around the plant."
+    },
+    "corn___common_rust": {
+        "nitrogen_multiplier": 0.85,
+        "irrigation_override": "delay",
+        "water_multiplier": 0.85,
+        "advice": "Fungal/Bacterial issue detected. Reduce nitrogen to slow leafy growth and reduce irrigation to lower humidity around the plant."
+    },
+    "corn___northern_leaf_blight": {
+        "nitrogen_multiplier": 0.85,
+        "irrigation_override": "delay",
+        "water_multiplier": 0.85,
+        "advice": "Fungal/Bacterial issue detected. Reduce nitrogen to slow leafy growth and reduce irrigation to lower humidity around the plant."
+    },
+    "grape___black_rot": {
+        "nitrogen_multiplier": 0.85,
+        "irrigation_override": "delay",
+        "water_multiplier": 0.85,
+        "advice": "Fungal/Bacterial issue detected. Reduce nitrogen to slow leafy growth and reduce irrigation to lower humidity around the plant."
+    },
+    "grape___esca_(black_measles)": {
+        "nitrogen_multiplier": 1.1,
+        "irrigation_override": "irrigate",
+        "water_multiplier": 1.0,
+        "advice": "Plant is stressed by pests or virus. Maintain strong nutrition (slight nitrogen boost) and avoid drought stress."
+    },
+    "grape___leaf_blight_(isariopsis_leaf_spot)": {
+        "nitrogen_multiplier": 0.85,
+        "irrigation_override": "delay",
+        "water_multiplier": 0.85,
+        "advice": "Fungal/Bacterial issue detected. Reduce nitrogen to slow leafy growth and reduce irrigation to lower humidity around the plant."
+    },
+    "orange___haunglongbing_(citrus_greening)": {
+        "nitrogen_multiplier": 1.1,
+        "irrigation_override": "irrigate",
+        "water_multiplier": 1.0,
+        "advice": "Plant is stressed by pests or virus. Maintain strong nutrition (slight nitrogen boost) and avoid drought stress."
+    },
+    "peach___bacterial_spot": {
+        "nitrogen_multiplier": 0.85,
+        "irrigation_override": "delay",
+        "water_multiplier": 0.85,
+        "advice": "Fungal/Bacterial issue detected. Reduce nitrogen to slow leafy growth and reduce irrigation to lower humidity around the plant."
+    },
+    "pepper,_bell___bacterial_spot": {
+        "nitrogen_multiplier": 0.85,
+        "irrigation_override": "delay",
+        "water_multiplier": 0.85,
+        "advice": "Fungal/Bacterial issue detected. Reduce nitrogen to slow leafy growth and reduce irrigation to lower humidity around the plant."
+    },
+    "potato___early_blight": {
+        "nitrogen_multiplier": 0.8,
+        "irrigation_override": "avoid_overwatering",
+        "water_multiplier": 0.8,
+        "advice": "Reduce nitrogen by 20% to prevent excessive leafy growth which encourages early blight lesion spread. Avoid overwatering as prolonged leaf wetness promotes disease development."
+    },
+    "potato___late_blight": {
+        "nitrogen_multiplier": 0.7,
+        "irrigation_override": "delay",
+        "water_multiplier": 0.7,
+        "advice": "Reduce nitrogen by 30% and delay irrigation significantly. Late blight thrives in wet, humid conditions; maintaining dry foliage is critical."
+    },
+    "squash___powdery_mildew": {
+        "nitrogen_multiplier": 0.85,
+        "irrigation_override": "delay",
+        "water_multiplier": 0.85,
+        "advice": "Fungal/Bacterial issue detected. Reduce nitrogen to slow leafy growth and reduce irrigation to lower humidity around the plant."
+    },
+    "strawberry___leaf_scorch": {
+        "nitrogen_multiplier": 1.1,
+        "irrigation_override": "irrigate",
+        "water_multiplier": 1.0,
+        "advice": "Plant is stressed by pests or virus. Maintain strong nutrition (slight nitrogen boost) and avoid drought stress."
+    },
+    "tomato___bacterial_spot": {
+        "nitrogen_multiplier": 0.85,
+        "irrigation_override": "delay",
+        "water_multiplier": 0.85,
+        "advice": "Fungal/Bacterial issue detected. Reduce nitrogen to slow leafy growth and reduce irrigation to lower humidity around the plant."
+    },
+    "tomato___early_blight": {
+        "nitrogen_multiplier": 0.8,
+        "irrigation_override": "avoid_overwatering",
+        "water_multiplier": 0.8,
+        "advice": "Reduce nitrogen by 20% to prevent excessive leafy growth which encourages early blight lesion spread. Avoid overwatering as prolonged leaf wetness promotes disease development."
+    },
+    "tomato___late_blight": {
+        "nitrogen_multiplier": 0.7,
+        "irrigation_override": "delay",
+        "water_multiplier": 0.7,
+        "advice": "Reduce nitrogen by 30% and delay irrigation significantly. Late blight thrives in wet, humid conditions; maintaining dry foliage is critical."
+    },
+    "tomato___leaf_mold": {
+        "nitrogen_multiplier": 0.85,
+        "irrigation_override": "delay",
+        "water_multiplier": 0.85,
+        "advice": "Fungal/Bacterial issue detected. Reduce nitrogen to slow leafy growth and reduce irrigation to lower humidity around the plant."
+    },
+    "tomato___septoria_leaf_spot": {
+        "nitrogen_multiplier": 0.85,
+        "irrigation_override": "delay",
+        "water_multiplier": 0.85,
+        "advice": "Fungal/Bacterial issue detected. Reduce nitrogen to slow leafy growth and reduce irrigation to lower humidity around the plant."
+    },
+    "tomato___spider_mites two-spotted_spider_mite": {
+        "nitrogen_multiplier": 0.85,
+        "irrigation_override": "delay",
+        "water_multiplier": 0.85,
+        "advice": "Fungal/Bacterial issue detected. Reduce nitrogen to slow leafy growth and reduce irrigation to lower humidity around the plant."
+    },
+    "tomato___target_spot": {
+        "nitrogen_multiplier": 0.85,
+        "irrigation_override": "delay",
+        "water_multiplier": 0.85,
+        "advice": "Fungal/Bacterial issue detected. Reduce nitrogen to slow leafy growth and reduce irrigation to lower humidity around the plant."
+    },
+    "tomato___tomato_yellow_leaf_curl_virus": {
+        "nitrogen_multiplier": 1.2,
+        "irrigation_override": "irrigate",
+        "water_multiplier": 1.1,
+        "advice": "Increase nitrogen by 20% and maintain consistent moisture. Leaf curl virus stresses the plant, requiring slightly higher nutrient support and prevention of drought stress."
+    },
+    "tomato___tomato_mosaic_virus": {
+        "nitrogen_multiplier": 1.1,
+        "irrigation_override": "irrigate",
+        "water_multiplier": 1.0,
+        "advice": "Plant is stressed by pests or virus. Maintain strong nutrition (slight nitrogen boost) and avoid drought stress."
+    }
+}

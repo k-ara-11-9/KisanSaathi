@@ -1,0 +1,230 @@
+{
+    "tomato": {
+        "seedling": {
+            "nitrogen": 40.0,
+            "phosphorus": 30.0,
+            "potassium": 30.0,
+            "moisture": 60.0
+        },
+        "vegetative": {
+            "nitrogen": 80.0,
+            "phosphorus": 40.0,
+            "potassium": 60.0,
+            "moisture": 65.0
+        },
+        "flowering": {
+            "nitrogen": 70.0,
+            "phosphorus": 60.0,
+            "potassium": 90.0,
+            "moisture": 70.0
+        },
+        "fruiting": {
+            "nitrogen": 60.0,
+            "phosphorus": 50.0,
+            "potassium": 110.0,
+            "moisture": 70.0
+        }
+    },
+    "rice": {
+        "tillering": {
+            "nitrogen": 90.0,
+            "phosphorus": 40.0,
+            "potassium": 40.0,
+            "moisture": 80.0
+        },
+        "panicle_initiation": {
+            "nitrogen": 110.0,
+            "phosphorus": 50.0,
+            "potassium": 60.0,
+            "moisture": 85.0
+        },
+        "flowering": {
+            "nitrogen": 80.0,
+            "phosphorus": 30.0,
+            "potassium": 50.0,
+            "moisture": 85.0
+        }
+    },
+    "apple": {
+        "vegetative": {
+            "nitrogen": 60.0,
+            "phosphorus": 40.0,
+            "potassium": 50.0,
+            "moisture": 60.0
+        },
+        "fruiting": {
+            "nitrogen": 50.0,
+            "phosphorus": 50.0,
+            "potassium": 80.0,
+            "moisture": 65.0
+        }
+    },
+    "blueberry": {
+        "vegetative": {
+            "nitrogen": 60.0,
+            "phosphorus": 40.0,
+            "potassium": 50.0,
+            "moisture": 60.0
+        },
+        "fruiting": {
+            "nitrogen": 50.0,
+            "phosphorus": 50.0,
+            "potassium": 80.0,
+            "moisture": 65.0
+        }
+    },
+    "cherry": {
+        "vegetative": {
+            "nitrogen": 60.0,
+            "phosphorus": 40.0,
+            "potassium": 50.0,
+            "moisture": 60.0
+        },
+        "fruiting": {
+            "nitrogen": 50.0,
+            "phosphorus": 50.0,
+            "potassium": 80.0,
+            "moisture": 65.0
+        }
+    },
+    "corn": {
+        "vegetative": {
+            "nitrogen": 60.0,
+            "phosphorus": 40.0,
+            "potassium": 50.0,
+            "moisture": 60.0
+        },
+        "fruiting": {
+            "nitrogen": 50.0,
+            "phosphorus": 50.0,
+            "potassium": 80.0,
+            "moisture": 65.0
+        }
+    },
+    "grape": {
+        "vegetative": {
+            "nitrogen": 60.0,
+            "phosphorus": 40.0,
+            "potassium": 50.0,
+            "moisture": 60.0
+        },
+        "fruiting": {
+            "nitrogen": 50.0,
+            "phosphorus": 50.0,
+            "potassium": 80.0,
+            "moisture": 65.0
+        }
+    },
+    "orange": {
+        "vegetative": {
+            "nitrogen": 60.0,
+            "phosphorus": 40.0,
+            "potassium": 50.0,
+            "moisture": 60.0
+        },
+        "fruiting": {
+            "nitrogen": 50.0,
+            "phosphorus": 50.0,
+            "potassium": 80.0,
+            "moisture": 65.0
+        }
+    },
+    "peach": {
+        "vegetative": {
+            "nitrogen": 60.0,
+            "phosphorus": 40.0,
+            "potassium": 50.0,
+            "moisture": 60.0
+        },
+        "fruiting": {
+            "nitrogen": 50.0,
+            "phosphorus": 50.0,
+            "potassium": 80.0,
+            "moisture": 65.0
+        }
+    },
+    "pepper,_bell": {
+        "vegetative": {
+            "nitrogen": 60.0,
+            "phosphorus": 40.0,
+            "potassium": 50.0,
+            "moisture": 60.0
+        },
+        "fruiting": {
+            "nitrogen": 50.0,
+            "phosphorus": 50.0,
+            "potassium": 80.0,
+            "moisture": 65.0
+        }
+    },
+    "potato": {
+        "vegetative": {
+            "nitrogen": 60.0,
+            "phosphorus": 40.0,
+            "potassium": 50.0,
+            "moisture": 60.0
+        },
+        "fruiting": {
+            "nitrogen": 50.0,
+            "phosphorus": 50.0,
+            "potassium": 80.0,
+            "moisture": 65.0
+        }
+    },
+    "raspberry": {
+        "vegetative": {
+            "nitrogen": 60.0,
+            "phosphorus": 40.0,
+            "potassium": 50.0,
+            "moisture": 60.0
+        },
+        "fruiting": {
+            "nitrogen": 50.0,
+            "phosphorus": 50.0,
+            "potassium": 80.0,
+            "moisture": 65.0
+        }
+    },
+    "soybean": {
+        "vegetative": {
+            "nitrogen": 60.0,
+            "phosphorus": 40.0,
+            "potassium": 50.0,
+            "moisture": 60.0
+        },
+        "fruiting": {
+            "nitrogen": 50.0,
+            "phosphorus": 50.0,
+            "potassium": 80.0,
+            "moisture": 65.0
+        }
+    },
+    "squash": {
+        "vegetative": {
+            "nitrogen": 60.0,
+            "phosphorus": 40.0,
+            "potassium": 50.0,
+            "moisture": 60.0
+        },
+        "fruiting": {
+            "nitrogen": 50.0,
+            "phosphorus": 50.0,
+            "potassium": 80.0,
+            "moisture": 65.0
+        }
+    },
+    "strawberry": {
+        "vegetative": {
+            "nitrogen": 60.0,
+            "phosphorus": 40.0,
+            "potassium": 50.0,
+            "moisture": 60.0
+        },
+        "fruiting": {
+            "nitrogen": 50.0,
+            "phosphorus": 50.0,
+            "potassium": 80.0,
+            "moisture": 65.0
+        }
+    }
+}
