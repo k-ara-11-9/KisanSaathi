@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
-from backend.schemas.recommendation_schema import RecommendationRequest, RecommendationResponse
-from backend.services.recommendation_service import build_plan
+from schemas.recommendation_schema import RecommendationRequest, RecommendationResponse
+from services.recommendation_service import build_plan
 
 router = APIRouter(
     prefix="/recommendation",

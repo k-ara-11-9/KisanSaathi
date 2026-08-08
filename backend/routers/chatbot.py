@@ -3,9 +3,9 @@ from typing import List, Optional
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
-from backend.schemas.recommendation_schema import RecommendationResponse
-from backend.services.llm_service import generate_simple_advice, parse_farmer_input
-from backend.services.recommendation_service import build_plan
+from schemas.recommendation_schema import RecommendationResponse
+from services.llm_service import generate_simple_advice, parse_farmer_input
+from services.recommendation_service import build_plan
 
 router = APIRouter(
     prefix="/chat",

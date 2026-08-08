@@ -4,8 +4,10 @@ import json
 from pathlib import Path
 from PIL import Image, ImageOps
 import io
-from services.recommendation_service import get_recommendation   # NEW
-from services.history_service import save_history_entry           # NEW
+from services.recommendation_service import build_plan
+from services.history_service import save_history_entry
+from services.llm_service import generate_simple_advice
+from schemas.recommendation_schema import RecommendationRequest, DiseaseInput
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 MODEL_PATH = BASE_DIR / "models" / "plant_disease_recog_model_pwp.keras"
@@ -105,10 +107,18 @@ def analyze_and_save(image_bytes: bytes) -> dict:
     if result["predicted_class"] == "Background_without_leaves":
         return result
 
-    recommendation = get_recommendation(result["predicted_class"], result["is_healthy"])
+    diseases_input = None
+    if not result["is_healthy"] and result["disease"]:
+        diseases_input = [DiseaseInput(name=result["predicted_class"], confidence=result["confidence"])]
 
-    treatment_text = recommendation.get("treatment") or recommendation.get("message", "")
-    solution_brief = treatment_text.split(".")[0].strip() + "." if treatment_text else "No specific advice available."
+    req = RecommendationRequest(
+        crop=result["crop"] or "Unknown",
+        growth_stage="vegetative",
+        diseases=diseases_input
+    )
+    
+    plan = build_plan(req)
+    solution_brief = generate_simple_advice(plan)
 
     saved = save_history_entry(
         image_bytes=image_bytes,
@@ -119,4 +129,9 @@ def analyze_and_save(image_bytes: bytes) -> dict:
         solution_brief=solution_brief,
     )
 
-    return {**result, "recommendation": recommendation, "solution_brief": solution_brief, "history_id": saved["id"]}
+    return {
+        **result, 
+        "recommendation": plan.model_dump(), 
+        "solution_brief": solution_brief, 
+        "history_id": saved["id"]
+    }

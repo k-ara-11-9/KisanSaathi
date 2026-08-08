@@ -30,35 +30,7 @@ with open(DISEASE_RULES_FILE, 'r') as f:
     DISEASE_RULES = json.load(f)
 
 
-def get_recommendation(predicted_class: str, is_healthy: bool) -> dict:
-    """
-    Returns disease treatment recommendation for disease_service.
-    Uses disease rules if available, or fallback.
-    """
-    if is_healthy:
-        return {
-            "status": "healthy",
-            "message": "No disease detected. Continue regular care.",
-            "treatment": None,
-        }
 
-    rule_data = DISEASE_RULES.get(predicted_class.lower())
-    if rule_data:
-        advice = rule_data.get("advice", "")
-        return {
-            "status": "disease_detected",
-            "severity": "medium",
-            "treatment": advice,
-            "prevention": "Ensure proper spacing and avoid overhead watering.",
-        }
-
-    formatted_name = predicted_class.replace("___", " - ").replace("_", " ")
-    return {
-        "status": "disease_detected",
-        "severity": "medium",
-        "treatment": f"Apply appropriate treatment for {formatted_name}.",
-        "prevention": "Ensure proper spacing and avoid overhead watering.",
-    }
 
 
 def _compute_soil_health(

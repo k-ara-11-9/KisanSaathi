@@ -4,7 +4,10 @@ from typing import Dict, List, Optional
 
 from groq import Groq
 
-from backend.schemas.recommendation_schema import RecommendationRequest, RecommendationResponse
+from schemas.recommendation_schema import RecommendationRequest, RecommendationResponse
+
+from dotenv import load_dotenv
+load_dotenv(override=True)
 
 # Initialize Groq client
 # The API key is passed directly or loaded from environment variables
@@ -96,6 +99,9 @@ def generate_simple_advice(
     
     CRITICAL RULE: You MUST output the final advice in the following language: {language}.
     """
+
+    if not GROQ_API_KEY:
+        return "You have a disease detected. Ensure proper care, but set up your GROQ_API_KEY in the .env file to receive AI-powered natural language advice!"
 
     user_prompt = f"Plan JSON: {response.model_dump_json()}"
 
