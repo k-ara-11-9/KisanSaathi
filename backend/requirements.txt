@@ -1,0 +1,19 @@
+# Backend
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Machine Learning
+tensorflow
+numpy
+pandas
+scikit-learn
+
+# Image processing
+Pillow
+
+# API requests
+requests
+
+# Environment variables
+python-dotenv
