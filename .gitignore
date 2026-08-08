@@ -3,3 +3,7 @@ venv/
 __pycache__/
 *.pyc
 .env
+backend/data/history.db
+backend/data/uploads/
+backend/test_history_db.py
+backend/models/plant_disease_recog_model_pwp.keras
