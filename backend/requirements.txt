@@ -17,3 +17,6 @@ requests
 
 # Environment variables
 python-dotenv
+
+# LLM integration
+groq
