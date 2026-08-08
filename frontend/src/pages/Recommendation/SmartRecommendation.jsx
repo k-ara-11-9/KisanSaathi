@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import DashboardLayout from '../../layouts/DashboardLayout.jsx';
 import Card from '../../components/common/Card.jsx';
 import { SOIL_DATA } from '../../utils/constants.js';
-// import { getRecommendation } from '../../services/recommendationService';
+import { getRecommendation, chatRecommendation } from '../../utils/api.js';
 
 const SUGGESTED = [
   'Should I irrigate today?',
@@ -11,12 +11,8 @@ const SUGGESTED = [
   'Best crop for this season?',
 ];
 
-const INITIAL_MESSAGES = [
-  {
-    from: 'ai',
-    text: "Hi! I'm your recommendation assistant. Based on your latest soil readings — Nitrogen 58%, Phosphorus 74%, Potassium 81%, Moisture 45% — ask me about irrigation, fertilizer dosage, or what to plant next.",
-  },
-];
+const FALLBACK_GREETING =
+  "Hi! I'm your recommendation assistant. Ask me about irrigation, fertilizer dosage, or what to plant next.";
 
 // Very small canned-response engine so the demo feels responsive without a
 // backend. Swap this for a real call to getRecommendation(message) once
@@ -39,7 +35,7 @@ function mockReply(message) {
 }
 
 export default function SmartRecommendation() {
-  const [messages, setMessages] = useState(INITIAL_MESSAGES);
+  const [messages, setMessages] = useState([{ from: 'ai', text: 'Loading your recommendation...' }]);
   const [input, setInput] = useState('');
   const scrollRef = useRef(null);
 
@@ -47,15 +43,39 @@ export default function SmartRecommendation() {
     scrollRef.current?.scrollTo(0, scrollRef.current.scrollHeight);
   }, [messages]);
 
-  const send = (text) => {
+  useEffect(() => {
+    const soilByLabel = Object.fromEntries(SOIL_DATA.map((d) => [d.label.toLowerCase(), d.val]));
+
+    getRecommendation({
+      crop: 'tomato',
+      growth_stage: 'vegetative',
+      soil: {
+        nitrogen: soilByLabel['nitrogen'] ?? null,
+        phosphorus: soilByLabel['phosphorus'] ?? null,
+        potassium: soilByLabel['potassium'] ?? null,
+        moisture: soilByLabel['moisture'] ?? null,
+      },
+    })
+      .then((res) => {
+        setMessages([{ from: 'ai', text: res.simple_advice || FALLBACK_GREETING }]);
+      })
+      .catch((err) => {
+        setMessages([{ from: 'ai', text: `${FALLBACK_GREETING} (Couldn't load live data: ${err.message})` }]);
+      });
+  }, []);
+
+  const send = async (text) => {
     const value = (text ?? input).trim();
     if (!value) return;
     setMessages((m) => [...m, { from: 'user', text: value }]);
     setInput('');
-    // Replace with: const reply = await getRecommendation(value);
-    setTimeout(() => {
-      setMessages((m) => [...m, { from: 'ai', text: mockReply(value) }]);
-    }, 500);
+    try {
+      const res = await chatRecommendation({ message: value });
+      const reply = res.simple_advice || "I couldn't come up with specific advice for that — try asking about irrigation, fertilizer, or crop choice.";
+      setMessages((m) => [...m, { from: 'ai', text: reply }]);
+    } catch (err) {
+      setMessages((m) => [...m, { from: 'ai', text: `Something went wrong: ${err.message}` }]);
+    }
   };
 
   return (

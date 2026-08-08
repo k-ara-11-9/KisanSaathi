@@ -51,11 +51,6 @@ export async function predictDisease(imageFile) {
 /**
  * History: GET /history/
  */
-export async function getHistory() {
-  const res = await fetch(`${BASE_URL}/history/`);
-  return handleResponse(res);
-}
-
 /**
  * History: GET /history/{entry_id}
  */
@@ -64,4 +59,30 @@ export async function getHistoryEntry(entryId) {
   return handleResponse(res);
 }
 
+/**
+ * Recommendation: POST /recommendation
+ * payload shape: { crop, growth_stage, latitude?, longitude?, soil?, farmer_routine?, diseases?, plan_days? }
+ */
+export async function getRecommendation(payload) {
+  const res = await fetch(`${BASE_URL}/recommendation`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  return handleResponse(res);
+}
+
+/**
+ * Chat: POST /chat
+ * Free-text Q&A that returns a full recommendation with simple_advice tailored to the question.
+ * payload shape: { message, disease_class?, language?, history? }
+ */
+export async function chatRecommendation(payload) {
+  const res = await fetch(`${BASE_URL}/chat`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  return handleResponse(res);
+}
 export { ApiError };
