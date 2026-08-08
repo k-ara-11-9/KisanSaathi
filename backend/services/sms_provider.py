@@ -12,7 +12,7 @@ the demo reliable without needing live MSG91 credentials.
 
 import os
 import requests
-from app.config import MSG91_AUTH_KEY, MSG91_SENDER_ID
+from backend.config import MSG91_AUTH_KEY, MSG91_SENDER_ID
 
 MSG91_SEND_URL = "https://api.msg91.com/api/v5/flow/"  # confirm exact endpoint for your product (long code / flow API differ)
 MOCK_SMS = os.getenv("MOCK_SMS", "true").lower() == "true"

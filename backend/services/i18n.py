@@ -4,7 +4,7 @@ conversation (HI -> pick an option -> answer that option).
 """
 
 from app.services import session as session_service
-from app.services.weather_service import get_forecast
+from backend.services.weather_service import get_forecast
 
 MENU_TEXT = (
     "Welcome to KisanSaathi!\n"

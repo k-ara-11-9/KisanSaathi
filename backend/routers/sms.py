@@ -3,8 +3,8 @@ SMS feature router - receives the MSG91 webhook and replies.
 """
 
 from fastapi import APIRouter, Request
-from app.services.sms_provider import send_sms
-from app.services.i18n import get_reply_text
+from backend.services.sms_provider import send_sms
+from backend.services.i18n import get_reply_text
 
 router = APIRouter()
 
